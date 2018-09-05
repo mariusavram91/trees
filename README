@@ -1,0 +1,76 @@
+# Simple Web Server for happy trees
+
+*******************************
+
+Create a simple web server, using only the standard library packages of your
+choice of python, go or nodejs, that does the following:
+
+    Only accepts POST requests.
+
+    For any request, checks the body for a json encoded object and returns a
+    descriptive HTTP error code if the body does not contain a valid json
+    object.
+    We expect this object to look like this:  {"favoriteTree": "baobab"}
+
+    Only accepts requests on the index URL: "/", and returns the proper HTTP
+    error code if a different URL is requested.
+
+    Runs locally on port 8000.
+
+    For a successful request, returns a properly encoded HTML document with the
+    following content:
+
+        If "favoriteTree" was specified:
+            It's nice to know that your favorite tree is a
+            <value of "favoriteTree" in the POST body>!
+
+        If not specified:
+            Please tell me your favorite tree.
+
+*******************************
+
+## Environment
+
+If you don't have Python you can follow the instructions from https://www.python.org/downloads/.
+
+Make sure to install Python 3.x
+
+First, create an environment.
+```
+$ virtualenv env
+```
+If you have both python 2.x and 3.x versions, use the below command.
+```
+$ virtualenv --python=/usr/bin/python3 env
+```
+You can activate it.
+```
+$ source ./env/bin/activate
+```
+Verify the version of python with the below command.
+```
+$ python
+Python 3.5.2 (default, Nov 23 2017, 16:37:01)
+[GCC 5.4.0 20160609] on linux
+Type "help", "copyright", "credits" or "license" for more information.
+>>>
+```
+When not using you can deactivate it.
+```
+$ deactivate
+```
+
+## Run the server
+
+Python 3 is a requirement, it should run out of the box on the create env with:
+
+```
+$ python trees.py
+```
+
+While running the server you can run the tests with the constraints using:
+```
+$ python test_trees.py
+```
+
+Check out the Bob Ross related Easter Eggs! :)
