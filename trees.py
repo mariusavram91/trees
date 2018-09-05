@@ -80,7 +80,8 @@ class SimpleHTTPRequestHandler(BaseHTTPRequestHandler):
                           Washington.")
                     favoriteTree = None
 
-                if favoriteTree and favoriteTree != '':
+                if favoriteTree and isinstance(favoriteTree, str) \
+                        and favoriteTree != '':
                     print('Talk to the tree, make friends with it.')
                     response = "It's nice to know that your favorite tree " + \
                         'is a ' + favoriteTree + '!'

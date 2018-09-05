@@ -174,6 +174,22 @@ class TestApi():
 
         return assert_comparison(expected, response)
 
+    def test_post_request_asks_for_favourite_tree_when_favourite_is_number(self):
+        expected = (
+            200,
+            'OK',
+            b'Please tell me your favorite tree.'
+        )
+
+        response = request(
+            'POST',
+            '/',
+            '{"favoriteTree": 2}',
+            {'Content-type': 'application/json'}
+        )
+
+        return assert_comparison(expected, response)
+
     def test_post_request_asks_for_favourite_tree_when_empty_payload(self):
         expected = (
             200,
